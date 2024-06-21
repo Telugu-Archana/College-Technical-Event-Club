@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="css/admin_main.css">
+</head>
+<body>
+    <h2>Welcome, Admin!</h2>
+
+    <div class="admin-buttons">
+        <a href="admin_event.php" class="admin-button">Events</a>
+        <a href="seeUsers.php" class="admin-button">Users</a>
+        <a href="admin_profile.php" class="admin-button">See Profile</a>
+        <a href="adminindex.html" class="logout-button">Logout</a>
+    </div>
+</body>
+<script>
+    function loadContent(page) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("content-container").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", page, true);
+        xhttp.send();
+    }
+</script>
+</html>

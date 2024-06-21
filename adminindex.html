@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/index.css">
+   
+    <title>Computer Society Of India | Login & Registration</title>
+</head>
+
+<body>
+   
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CSI TechConnect</p>
+            </div>
+            
+            <!-- Toggle between User and Admin Login using links -->
+            <div class="login-toggle">
+                <a href="index.html" style="color:white">User Login</a>
+                <a href="adminindex.html" style="color:white">Admin Login</a>
+            </div>
+        </nav>
+        <!----------------------------- Form box ----------------------------------->
+        <div class="form-box">
+            
+            <!-------------------Admin login form -------------------------->
+            <div class="login-container" id="login">
+                <div class="top">
+                    
+                    <header>Admin Login</header>
+                </div>
+                <form action="adminlogin.php" method="POST">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Admin-ID" name="admin_id" required>
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Password" name="admin_password" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Sign In">
+                    </div>
+                </form>
+               
+            </div>
+
+            <div id="notificationBox" class="notification" style="display: none;">Invalid user or password</div>
+        </div>
+    </div>
+    <script>
+
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+        var a = document.getElementById("loginBtn");
+        var b = document.getElementById("registerBtn");
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        function login() {
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            a.className += " white-btn";
+            b.className = "btn";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+        function register() {
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            a.className = "btn";
+            b.className += " white-btn";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+
+        function showNotification(message, type) {
+            var notificationBox = document.getElementById('notificationBox');
+            notificationBox.textContent = message;
+            notificationBox.className = 'notification ' + type;
+            notificationBox.style.display = 'block';
+
+            // Hide the notification after 3 seconds
+            setTimeout(function () {
+                notificationBox.style.display = 'none';
+            }, 5000);
+        }
+
+        // your existing JavaScript co
+    </script>
+</body>
+
+</html>
